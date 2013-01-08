@@ -4,21 +4,30 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     lint: {
-      files: ['grunt.js']
+      files: ['Gruntfile.js']
     },
     concat: {},
     less: {
-      bootstrap: {
-        options: {
-          paths: ['src/css/bootstrap']
-        },
+      options: {
+        paths: ['src/css/bootstrap']
+      },
 
+      bootstrap: {
         src: ['src/css/bootstrap/bootstrap.less'],
         dest: 'dist/bootstrap.css'
+      },
+
+      bootstrapr: {
+        src: ['src/css/bootstrap/responsive.less'],
+        dest: 'dist/bootstrap-responsive.css'
       }
     },
-    server: {
-      base: 'dist'
+    connect: {
+      server: {
+        options: {
+          base: 'dist'
+        }
+      }
     },
     watch: {
       files: '<config:lint.files>',
@@ -28,6 +37,8 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   // Default task(s).
   grunt.registerTask('default', 'lint');
