@@ -2,30 +2,32 @@ module.exports = (grunt) ->
   # Project configuration.
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
-    jshint:
-      files: ['Gruntfile.js']
+
+    paths:
+      assets: ['src/font/**', 'src/img/**']
+      html: 'src/html/**'
+      bootstrap: 'src/css/bootstrap'
 
     clean:
       dist: 'dist'
 
-    #concat:
     copy:
-      dist:
-        #options:
-          #cwd: 'src/'
-
+      assets:
         files:
-          'dist/': ['src/font/**', 'src/img/**']
-          'dist/index.html': ['src/html/index.html']
+          'dist/': '<%= paths.assets %>'
+
+      html:
+        files:
+          'dist/': '<%= paths.html %>'
 
     less:
       bootstrap:
         options:
-          paths: ['src/css/bootstrap']
+          paths: ['<%= paths.bootstrap %>']
 
         files:
-          'dist/css/bootstrap.css': 'src/css/bootstrap/bootstrap.less'
-          'dist/css/bootstrap-responsive.css': 'src/css/bootstrap/responsive.less'
+          'dist/css/bootstrap.css': '<%= paths.bootstrap %>/bootstrap.less'
+          'dist/css/bootstrap-responsive.css': '<%= paths.bootstrap %>/responsive.less'
 
       fontawesome:
         options:
@@ -40,8 +42,17 @@ module.exports = (grunt) ->
           base: 'dist'
 
     watch:
-      files: '<config:lint.files>'
-      tasks: 'lint'
+      less:
+        files: '<%= paths.bootstrap %>/**'
+        tasks: 'less'
+
+      assets:
+        files: '<%= paths.assets %>'
+        tasks: 'copy:assets'
+
+      html:
+        files: '<%= paths.html %>'
+        tasks: 'copy:html'
 
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-copy'
@@ -50,5 +61,8 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-contrib-clean'
 
+  grunt.registerTask 'dist', ['copy', 'less']
+  grunt.registerTask 'dev', ['dist', 'connect', 'watch']
+
   # Default task(s).
-  grunt.registerTask 'default', 'jshint'
+  grunt.registerTask 'default', 'dist'
