@@ -5,6 +5,9 @@ module.exports = (grunt) ->
     jshint:
       files: ['Gruntfile.js']
 
+    clean:
+      dist: 'dist'
+
     #concat:
     copy:
       dist:
@@ -13,6 +16,7 @@ module.exports = (grunt) ->
 
         files:
           'dist/': ['src/font/**', 'src/img/**']
+          'dist/index.html': ['src/html/index.html']
 
     less:
       bootstrap:
@@ -44,6 +48,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-connect'
+  grunt.loadNpmTasks 'grunt-contrib-clean'
 
   # Default task(s).
   grunt.registerTask 'default', 'jshint'
