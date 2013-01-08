@@ -1,0 +1,9 @@
+{
+  "name": "sprettur",
+  "version": "0.1.0",
+  "devDependencies": {
+    "coffee-script": "1.4.0",
+    "grunt": "~0.3.0",
+    "grunt-contrib-concat": "~0.1.1"
+  }
+}
