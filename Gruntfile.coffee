@@ -2,22 +2,33 @@ module.exports = (grunt) ->
   # Project configuration.
   grunt.initConfig
     pkg: grunt.file.readJSON 'package.json'
-    lint:
+    jshint:
       files: ['Gruntfile.js']
 
     #concat:
+    copy:
+      dist:
+        #options:
+          #cwd: 'src/'
+
+        files:
+          'dist/': ['src/font/**', 'src/img/**']
 
     less:
-      options:
-        paths: ['src/css/bootstrap']
-
       bootstrap:
-        src: ['src/css/bootstrap/bootstrap.less']
-        dest: 'dist/bootstrap.css'
+        options:
+          paths: ['src/css/bootstrap']
 
-      bootstrapr:
-        src: ['src/css/bootstrap/responsive.less']
-        dest: 'dist/bootstrap-responsive.css'
+        files:
+          'dist/css/bootstrap.css': 'src/css/bootstrap/bootstrap.less'
+          'dist/css/bootstrap-responsive.css': 'src/css/bootstrap/responsive.less'
+
+      fontawesome:
+        options:
+          paths: ['src/css/font-awesome']
+
+        files:
+          'dist/css/font-awesome.css': 'src/css/font-awesome/font-awesome.less'
 
     connect:
       server:
@@ -29,9 +40,10 @@ module.exports = (grunt) ->
       tasks: 'lint'
 
   grunt.loadNpmTasks 'grunt-contrib-concat'
+  grunt.loadNpmTasks 'grunt-contrib-copy'
   grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-connect'
 
   # Default task(s).
-  grunt.registerTask 'default', 'lint'
+  grunt.registerTask 'default', 'jshint'
