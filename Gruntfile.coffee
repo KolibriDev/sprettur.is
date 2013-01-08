@@ -4,7 +4,7 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON 'package.json'
 
     paths:
-      assets: ['src/font/**', 'src/img/**']
+      assets: ['src/font/**', 'src/img/**', 'src/js/**']
       html: 'src/html/**'
       bootstrap: 'src/css/bootstrap'
 
