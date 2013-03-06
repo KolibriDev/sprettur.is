@@ -1,0 +1,48 @@
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#brand {
+  background: #dfdfdf;
+  height: 120px;
+  padding-top: 32px;
+  text-align: center;
+}
+
+#banner {
+  background: #21211e url(../images/banner1.jpg) center center no-repeat;
+  color: #fff;
+  height: 476px;
+  padding-top: 220px;
+  position: relative;
+  text-align: center;
+}
+#overlay {
+  background: rgba(33, 33, 30, 0.9);
+  left: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+#banner h1 {
+  font-weight: normal;
+  margin: 0;
+  position: relative;
+  z-index: 3;
+}
+
+
+section h2 {
+  text-align: center;
+}
+
+section .box h3 {
+  text-align: center;
+}
