@@ -9,6 +9,7 @@
 
 #banner {
   background: #21211e url(../images/banner1.jpg) center center no-repeat;
+  background-size: cover;
   color: #fff;
   height: 476px;
   padding-top: 220px;
