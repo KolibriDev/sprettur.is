@@ -26,8 +26,7 @@
 
   <body>
     <div id="wrap">
-      <header class="blackbg">
-        <div class="container">
+      <header>
           <svg
              xmlns:dc="http://purl.org/dc/elements/1.1/"
              xmlns:cc="http://creativecommons.org/ns#"
@@ -37,7 +36,7 @@
              version="1.1"
              width="492.88663"
              height="181.59225"
-             id="svg3255">
+             id="logo">
             <defs
                id="defs3257">
               <clipPath
@@ -145,10 +144,9 @@
               </g>
             </g>
           </svg>
-        </div>
       </header>
 
-      <div>
+      <div class="content">
         <div class="redbg">
           <div class="container">
             <p>Use this document as a way to quick start any new project.<br> All you get is this message and a barebones HTML document.</p>
@@ -164,7 +162,7 @@
         <div id="push"></div>
       </div>
 
-      <footer class="blackbg">
+      <footer>
         <div class="container">
           <div class="row">
             <div class="span3">
@@ -203,6 +201,13 @@
     <script src="js/bootstrap-collapse.js"></script>
     <script src="js/bootstrap-carousel.js"></script>
     <script src="js/bootstrap-typeahead.js"></script>
+    <script src="https://raw.github.com/raimohanska/bacon.js/master/dist/Bacon.js"></script>
+
+    <script>
+      var wh = function() { return $(window).height(); }
+      var whp = $(window).asEventStream("resize").map(wh).toProperty(wh());
+      whp.assign($("header"), "height");
+    </script>
 
   </body>
 </html>
