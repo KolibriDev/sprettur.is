@@ -36,7 +36,7 @@ body {
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 2;
+  z-index: 5;
 }
 
 #banner h1 {
@@ -45,16 +45,17 @@ body {
   font-weight: normal;
   margin: 0;
   position: relative;
-  z-index: 3;
+  z-index: 10;
 }
 
 
 /* menu */
 nav {
-  left: 510px;
   margin-top: -40px;
   position: absolute;
-  z-index: 5;
+  text-align: center;
+  width: 100%;
+  z-index: 15;
 }
 
 nav ul {
@@ -64,7 +65,7 @@ nav ul {
 }
 
 nav li {
-  float: left;
+  display: inline-block;
   margin-right: 30px;
 }
 nav .on {
