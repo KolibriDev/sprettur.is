@@ -2,6 +2,7 @@
 
 :root {
   var-black: #3f3f3a;
+  var-black-rbga: rgba(63, 63, 58, 0.85);
   var-red: #ed535a;
 
   var-gray: #dfdfdf;
@@ -41,9 +42,8 @@ body {
 }
 
 #banner {
-  background: #21211e url(../images/banner1.jpg) center center no-repeat;
+  background: var(black) url(../images/banner1.jpg) center center no-repeat;
   background-size: cover;
-  border-bottom: var(border);
   color: #fff;
   height: 476px;
   padding-top: 220px;
@@ -52,7 +52,7 @@ body {
 }
 
 #overlay {
-  background: rgba(33, 33, 30, 0.9);
+  background: var(black-rbga);
   left: 0;
   height: 100%;
   position: absolute;
@@ -73,11 +73,20 @@ body {
 
 /* menu */
 nav {
-  margin-top: -40px;
+  border-bottom: var(border);
+  height: 80px;
+  line-height: 80px;
+  margin-top: -80px;
   position: absolute;
   text-align: center;
   width: 100%;
   z-index: 15;
+}
+nav.scrollfix {
+  background: var(black);
+  margin-top: 0;
+  position: fixed;
+  top: 0;
 }
 
 nav ul {
@@ -92,14 +101,12 @@ nav li {
 
 nav a {
   color: #fff;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 25px 23px;
   text-decoration: none;
 }
 nav .on a,
 nav a:hover {
   border-bottom: var(border);
-  padding-bottom: 14px;
 }
 
 /* content */
