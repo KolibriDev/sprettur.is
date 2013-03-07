@@ -88,17 +88,19 @@ nav ul {
 
 nav li {
   display: inline-block;
-  margin-right: 30px;
-}
-nav .on {
-  border-bottom: var(border);
 }
 
 nav a {
   color: #fff;
+  padding-left: 25px;
+  padding-right: 25px;
   text-decoration: none;
 }
-
+nav .on a,
+nav a:hover {
+  border-bottom: var(border);
+  padding-bottom: 14px;
+}
 
 /* content */
 section {
