@@ -33,7 +33,8 @@ module.exports = (grunt) ->
         toString: {compress: true}
 
         use: [
-          ['rework.vars']
+          ['rework.vars'],
+          ['rework.colors']
         ]
 
     connect:
