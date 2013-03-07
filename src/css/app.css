@@ -2,7 +2,6 @@
 
 :root {
   var-black: #3f3f3a;
-  var-black-rbga: rgba(63, 63, 58, 0.85);
   var-red: #ed535a;
 
   var-gray: #dfdfdf;
@@ -52,9 +51,10 @@ body {
 }
 
 #overlay {
-  background: var(black-rbga);
+  background: var(black);
   left: 0;
   height: 100%;
+  opacity: 0.85;
   position: absolute;
   top: 0;
   width: 100%;
