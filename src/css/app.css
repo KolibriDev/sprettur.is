@@ -1,5 +1,7 @@
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
+
+/* header */
 #brand {
   background: #dfdfdf;
   height: 120px;
@@ -10,6 +12,7 @@
 #banner {
   background: #21211e url(../images/banner1.jpg) center center no-repeat;
   background-size: cover;
+  border-bottom: 4px solid #dfdfdf;
   color: #fff;
   height: 476px;
   padding-top: 220px;
@@ -34,6 +37,35 @@
 }
 
 
+/* menu */
+nav {
+  left: 510px;
+  margin-top: -40px;
+  position: absolute;
+  z-index: 5;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  float: left;
+  margin-right: 30px;
+}
+nav .on {
+  border-bottom: 4px solid #dfdfdf;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* content */
 section {
   min-height: 400px;
 }
