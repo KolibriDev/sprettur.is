@@ -5,7 +5,7 @@ module.exports = (grunt) ->
 
     paths:
       assets: ['src/font/**', 'src/images/**', 'src/js/**']
-      css: 'src/css/**'
+      vendorcss: 'src/vendorcss/**'
       html: 'src/html/**'
 
     clean:
@@ -17,14 +17,23 @@ module.exports = (grunt) ->
           { expand: true, cwd: 'src', dest: 'dist/', src: ['font/**', 'images/**', 'js/**'] }
         ]
 
-      css:
+      vendorcss:
         files: [
-          { expand: true, cwd: 'src', dest: 'dist/', src: ['css/**'] }
+          { expand: true, cwd: 'src/vendorcss', dest: 'dist/css', src: ['**'] }
         ]
 
       html:
         files: [
           { expand: true, cwd: 'src/html', dest: 'dist/', src: ['**.html'] }
+        ]
+
+    rework:
+      'dist/css/app.css': 'src/css/app.css'
+      options:
+        toString: {compress: true}
+
+        use: [
+          ['rework.vars']
         ]
 
     connect:
@@ -37,6 +46,14 @@ module.exports = (grunt) ->
         files: '<%= paths.assets %>'
         tasks: 'copy:assets'
 
+      rework:
+        files: 'src/css/app.css'
+        tasks: 'rework'
+
+      vendorcss:
+        files: '<%= paths.css %>'
+        tasks: 'copy:vendorcss'
+
       html:
         files: '<%= paths.html %>'
         tasks: 'copy:html'
@@ -47,7 +64,9 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-contrib-clean'
 
-  grunt.registerTask 'dist', ['copy']
+  grunt.loadNpmTasks 'grunt-rework'
+
+  grunt.registerTask 'dist', ['copy', 'rework']
   grunt.registerTask 'dev', ['dist', 'connect', 'watch']
 
   # Default task(s).
