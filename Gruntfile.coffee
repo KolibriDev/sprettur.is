@@ -40,6 +40,7 @@ module.exports = (grunt) ->
       server:
         options:
           base: 'dist'
+          hostname: '0.0.0.0'
 
     watch:
       assets:

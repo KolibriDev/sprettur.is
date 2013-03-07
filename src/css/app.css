@@ -1,14 +1,36 @@
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
-body {
-  font-family: 'Merriweather Sans', sans-serif;
-}
-
 :root {
   var-black: #3f3f3a;
   var-red: #ed535a;
+
   var-gray: #dfdfdf;
+  var-txt-gray: #848484;
+
+  var-border-size: 4px;
+  var-border: var(border-size) solid var(gray);
+
+  var-font-serif: 'Merriweather', serif;
+  var-font-sans-serif: 'Merriweather Sans', sans-serif;
+
+  var-font-xlarge: 40px;
+  var-font-large: 20px;
+  var-font-normal: 14px;
+  var-font-small: 12px;
+
+  var-line-height-xlarge: 50px;
+  var-line-height-normal: 25px;
+
+  var-hr-width: 40px;
 }
+
+
+body {
+  font-family: var(font-sans-serif);
+  font-size: var(font-normal);
+  color: var(black);
+}
+
 
 /* header */
 #brand {
@@ -21,7 +43,7 @@ body {
 #banner {
   background: #21211e url(../images/banner1.jpg) center center no-repeat;
   background-size: cover;
-  border-bottom: 4px solid var(gray);
+  border-bottom: var(border);
   color: #fff;
   height: 476px;
   padding-top: 220px;
@@ -40,8 +62,8 @@ body {
 }
 
 #banner h1 {
-  font-size: 40px;
-  font-family: 'Merriweather', serif;
+  font-size: var(font-xlarge);
+  font-family: var(font-serif);
   font-weight: normal;
   margin: 0;
   position: relative;
@@ -69,7 +91,7 @@ nav li {
   margin-right: 30px;
 }
 nav .on {
-  border-bottom: 4px solid var(gray);
+  border-bottom: var(border);
 }
 
 nav a {
@@ -84,7 +106,8 @@ section {
 }
 
 section h2 {
-  font-family: 'Merriweather', serif;
+  font-family: var(font-serif);
+  font-size: var(font-xlarge);
   text-align: center;
 }
 
@@ -95,10 +118,31 @@ section .box {
 }
 
 section .box h3 {
-  font-family: 'Merriweather', serif;
+  font-family: var(font-serif);
+  font-size: var(font-large);
   text-align: center;
 }
 
+hr {
+  border: 0;
+  height: var(border-size);
+  width: var(hr-width);
+  background-color: var(gray);
+}
+
+p {
+  line-height: var(line-height-normal);
+  text-align: center;
+  color: var(txt-gray);
+}
+
+.gray p {
+  color: var(black);
+}
+
+.gray hr {
+  background-color: var(black);
+}
 
 #verk {
   background: var(gray);
