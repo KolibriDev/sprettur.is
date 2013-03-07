@@ -4,37 +4,28 @@ module.exports = (grunt) ->
     pkg: grunt.file.readJSON 'package.json'
 
     paths:
-      assets: ['src/font/**', 'src/img/**', 'src/js/**']
+      assets: ['src/font/**', 'src/images/**', 'src/js/**']
+      css: 'src/css/**'
       html: 'src/html/**'
-      bootstrap: 'src/css/bootstrap'
 
     clean:
       dist: 'dist'
 
     copy:
       assets:
-        files:
-          'dist/': '<%= paths.assets %>'
+        files: [
+          { expand: true, cwd: 'src', dest: 'dist/', src: ['font/**', 'images/**', 'js/**'] }
+        ]
+
+      css:
+        files: [
+          { expand: true, cwd: 'src', dest: 'dist/', src: ['css/**'] }
+        ]
 
       html:
-        files:
-          'dist/': '<%= paths.html %>'
-
-    less:
-      bootstrap:
-        options:
-          paths: ['<%= paths.bootstrap %>']
-
-        files:
-          'dist/css/bootstrap.css': '<%= paths.bootstrap %>/bootstrap.less'
-          'dist/css/bootstrap-responsive.css': '<%= paths.bootstrap %>/responsive.less'
-
-      fontawesome:
-        options:
-          paths: ['src/css/font-awesome']
-
-        files:
-          'dist/css/font-awesome.css': 'src/css/font-awesome/font-awesome.less'
+        files: [
+          { expand: true, cwd: 'src/html', dest: 'dist/', src: ['**.html'] }
+        ]
 
     connect:
       server:
@@ -42,10 +33,6 @@ module.exports = (grunt) ->
           base: 'dist'
 
     watch:
-      less:
-        files: '<%= paths.bootstrap %>/**'
-        tasks: 'less'
-
       assets:
         files: '<%= paths.assets %>'
         tasks: 'copy:assets'
@@ -56,12 +43,11 @@ module.exports = (grunt) ->
 
   grunt.loadNpmTasks 'grunt-contrib-concat'
   grunt.loadNpmTasks 'grunt-contrib-copy'
-  grunt.loadNpmTasks 'grunt-contrib-less'
   grunt.loadNpmTasks 'grunt-contrib-watch'
   grunt.loadNpmTasks 'grunt-contrib-connect'
   grunt.loadNpmTasks 'grunt-contrib-clean'
 
-  grunt.registerTask 'dist', ['copy', 'less']
+  grunt.registerTask 'dist', ['copy']
   grunt.registerTask 'dev', ['dist', 'connect', 'watch']
 
   # Default task(s).
