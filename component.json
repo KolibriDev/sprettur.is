@@ -4,7 +4,6 @@
   "dependencies": {
     "jquery": "~1.9.1",
     "bacon": "~0.1.7",
-    "html5shiv": "~3.6.2",
-    "zepto": "~1.0.0rc1"
+    "html5shiv": "~3.6.2"
   }
 }
