@@ -88,6 +88,7 @@ nav.scrollfix {
   margin-top: 0;
   position: fixed;
   top: 0;
+  -webkit-overflow-scrolling: touch
 }
 
 nav ul {
@@ -134,13 +135,14 @@ section h2 {
 section .box {
   border: 4px solid var(gray);
   min-height: 400px;
-  padding: 10px;
+  padding: 10px 20px;
 }
 
 section .box h3 {
   font-family: var(font-serif);
   font-size: var(font-large);
   text-align: center;
+  margin-top: 30px;
 }
 
 hr {
@@ -157,7 +159,18 @@ p {
   color: var(txt-gray);
 }
 
+p.small {
+  font-size: var(font-small);
+  color: var(small-gray);
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
 .gray p {
+  color: var(black);
+}
+
+.gray p.small {
   color: var(black);
 }
 
@@ -165,10 +178,4 @@ p {
   background-color: var(black);
 }
 
-p.small {
-  font-size: var(font-small);
-  color: var(small-gray);
-  margin-top: 10px;
-  margin-bottom: 30px;
-}
 
