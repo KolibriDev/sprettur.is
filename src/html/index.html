@@ -190,13 +190,17 @@ document.write('<script src="js/' +
 
 <script>
   $(function() {
-    var scrollEvents = $(window).asEventStream("scroll").map(function() { return $(document).scrollTop(); });
-
     var $nav = $("nav");
-    var initialNavTop = $nav.offset().top;
 
     // make the nav bar fixed position when we scroll past its top position
-    scrollEvents.map(function(val) { return val >= initialNavTop ? "scrollfix" : ""; }).assign($nav, "attr", "class");
+    Bacon.combineTemplate({
+      initial: Bacon.constant($nav.offset().top),
+      top: $(window).asEventStream("scroll").map(function() { return $(document).scrollTop(); })
+    }).map(function(val) {
+      return val.top >= val.initial ? "scrollfix" : "";
+    }).onValue(function(classname) {
+      $nav.attr("class", classname);
+    });
   });
 </script>
 
