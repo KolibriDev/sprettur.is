@@ -103,9 +103,8 @@ nav li {
 }
 
 nav a {
-  color: #fff;
+  color: var(white);
   padding: 25px 23px;
-  text-decoration: none;
   font-weight: lighter;
 }
 nav .on a,
@@ -133,10 +132,18 @@ section h2 {
   margin-top: 0;
 }
 
+footer {
+  margin-top: -40px;
+  background-color: var(black);
+  min-height: 260px;
+}
+
 .box {
   border: 4px solid var(gray);
   min-height: 400px;
   padding: 10px;
+  background: var(white);
+
 }
 
 .box h3 {
@@ -160,6 +167,13 @@ hr {
   width: var(hr-width);
   background-color: var(gray);
 }
+
+a {
+  text-decoration: none;
+  color: var(txt-gray);
+  font-weight: lighter;
+}
+
 
 p {
   line-height: var(line-height-normal);
@@ -220,12 +234,6 @@ p.small {
   width: 100%;
 }
 
-.profile a {
-  text-decoration: none;
-  color: var(txt-gray);
-  font-weight: lighter;
-}
-
 .hire {
   min-height: 365px;
 }
@@ -242,7 +250,12 @@ p.small {
   display: block;
   background-color: var(white);
   color: var(black);
+  font-weight: bold;
   padding: 15px;
-  text-decoration: none;
   margin-bottom: 10px;
+}
+
+em {
+  font-style: normal;
+  color: var(black);
 }
