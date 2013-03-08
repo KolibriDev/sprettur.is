@@ -1,0 +1,21 @@
+/* TEAM */
+
+Designer: Steinar Ingi Farestveit
+Twitter: @steifar
+From: Reykjavík, Iceland
+
+Developer: Guðmundur Bjarni Ólafsson
+Twitter: @gudmundur
+From: Reykjavík, Iceland
+
+Developer: Árni Hermann Reynisson
+Twitter: @arnihermann
+From: Reykjavík, Iceland
+
+/* SITE */
+
+Language: Icelandic
+Standards: HTML5, CSS3, ...
+Components: jQuery, Bacon.js, ...
+
+

@@ -24,7 +24,7 @@ module.exports = (grunt) ->
 
       html:
         files: [
-          { expand: true, cwd: 'src/html', dest: 'dist/', src: ['**.html'] }
+          { expand: true, cwd: 'src/html', dest: 'dist/', src: ['**'] }
         ]
 
     rework:
