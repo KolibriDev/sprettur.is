@@ -133,20 +133,20 @@ section h2 {
   margin-top: 0;
 }
 
-section .box {
+.box {
   border: 4px solid var(gray);
   min-height: 400px;
   padding: 10px;
 }
 
-section .box h3 {
+.box h3 {
   font-family: var(font-serif);
   font-size: var(font-large);
   text-align: center;
   margin-top: 30px;
 }
 
-section .box h4 {
+.box h4 {
   font-family: var(font-serif);
   font-size: var(font-large);
   margin-top: 20px;
@@ -188,8 +188,7 @@ p.small {
   background-color: var(black);
 }
 
-/* FIXME Rename this class to something on padding on boxes */
-.box.center {
+.box.padding {
   padding: 10px 20px;
 }
 
@@ -211,7 +210,7 @@ p.small {
   line-height: var(line-height-normal);
 }
 
-.box.profile {
+.profile {
   margin-bottom: 20px;
   min-height: 365px;
 }
@@ -227,8 +226,16 @@ p.small {
   font-weight: lighter;
 }
 
-.box.hire {
+.hire {
   min-height: 365px;
+}
+
+.hire h4 {
+  margin-top: 70px;
+}
+
+.hire p {
+  margin: 20px 0px;
 }
 
 .hire a {
