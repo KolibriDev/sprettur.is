@@ -1,0 +1,9 @@
+{
+  "name": "sprettur.is",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "bacon": "~0.1.7",
+    "html5shiv": "~3.6.2"
+  }
+}

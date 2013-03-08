@@ -37,6 +37,10 @@ module.exports = (grunt) ->
           ['rework.colors']
         ]
 
+    bower:
+      dev:
+        dest: 'dist/js/'
+
     connect:
       server:
         options:
@@ -67,8 +71,9 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-clean'
 
   grunt.loadNpmTasks 'grunt-rework'
+  grunt.loadNpmTasks 'grunt-bower'
 
-  grunt.registerTask 'dist', ['copy', 'rework']
+  grunt.registerTask 'dist', ['copy', 'rework', 'bower']
   grunt.registerTask 'dev', ['dist', 'connect', 'watch']
 
   # Default task(s).
