@@ -99,8 +99,12 @@
   <p>Sed vehicula gravida tincidunt. Praesent lectus metus, commodo eu lobortis.</p>
 </section>
 
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<script src="https://raw.github.com/raimohanska/bacon.js/master/dist/Bacon.js"></script>
+<script>
+document.write('<script src="js/' +
+('__proto__' in {} ? 'zepto' : 'jquery') +
+'.js"><\/script>')
+</script>
+<script src="js/bacon.js"></script>
 
 <script>
   $(function() {
