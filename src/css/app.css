@@ -133,7 +133,6 @@ section h2 {
 }
 
 footer {
-  margin-top: -40px;
   background-color: var(black);
   min-height: 260px;
 }
@@ -174,6 +173,10 @@ a {
   font-weight: lighter;
 }
 
+em {
+  font-style: normal;
+  color: var(black);
+}
 
 p {
   line-height: var(line-height-normal);
@@ -255,7 +258,20 @@ p.small {
   margin-bottom: 10px;
 }
 
-em {
-  font-style: normal;
-  color: var(black);
+.floater {
+  position: relative;
+  margin-top: 160px;
+}
+
+#sprettur {
+  width: 590px;
+  position: absolute;
+  margin-top: -60px;
+  padding-top: 0;
+}
+
+#map {
+  background: var(black) url(../images/map.png) center center no-repeat;
+  background-size: cover;
+  height: 560px;
 }
