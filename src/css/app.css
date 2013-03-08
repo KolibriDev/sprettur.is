@@ -1,6 +1,7 @@
 * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 :root {
+  var-white: white;
   var-black: #3f3f3a;
   var-red: #ed535a;
 
@@ -135,7 +136,7 @@ section h2 {
 section .box {
   border: 4px solid var(gray);
   min-height: 400px;
-  padding: 10px 20px;
+  padding: 10px;
 }
 
 section .box h3 {
@@ -143,6 +144,13 @@ section .box h3 {
   font-size: var(font-large);
   text-align: center;
   margin-top: 30px;
+}
+
+section .box h4 {
+  font-family: var(font-serif);
+  font-size: var(font-large);
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 hr {
@@ -156,6 +164,7 @@ hr {
 p {
   line-height: var(line-height-normal);
   text-align: center;
+  font-weight: lighter;
   color: var(txt-gray);
 }
 
@@ -166,7 +175,8 @@ p.small {
   margin-bottom: 30px;
 }
 
-.gray p {
+.gray p,
+.solid p {
   color: var(black);
 }
 
@@ -178,4 +188,54 @@ p.small {
   background-color: var(black);
 }
 
+/* FIXME Rename this class to something on padding on boxes */
+.box.center {
+  padding: 10px 20px;
+}
 
+.box.noheight {
+  min-height: auto;
+}
+
+.box.solid,
+.box.hover:hover {
+  background-color: var(gray);
+}
+
+
+.center {
+  text-align: center;
+}
+
+.txt {
+  line-height: var(line-height-normal);
+}
+
+.box.profile {
+  margin-bottom: 20px;
+  min-height: 365px;
+}
+
+.profile img {
+  display: block;
+  width: 100%;
+}
+
+.profile a {
+  text-decoration: none;
+  color: var(txt-gray);
+  font-weight: lighter;
+}
+
+.box.hire {
+  min-height: 365px;
+}
+
+.hire a {
+  display: block;
+  background-color: var(white);
+  color: var(black);
+  padding: 15px;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
