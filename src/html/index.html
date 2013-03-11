@@ -26,17 +26,17 @@
     </div>
     <nav>
       <ul>
-        <li><a href="#hugbunadur">Hugbúnaður</a></li>
-        <li><a href="#ferli">Ferli</a></li>
-        <li><a href="#verk">Verk</a></li>
+        <li><a href="#hugbunadarthroun">Hugbúnaðurþróun</a></li>
+        <li><a href="#ferlid">Ferlið</a></li>
+        <li><a href="#verkin">Verkin</a></li>
         <li><a href="#starfsfolk">Starfsfólk</a></li>
-        <li class="on"><a href="#sprettur">Sprettur</a></li>
+        <li><a href="#sprettur">Sprettur</a></li>
       </ul>
     </nav>
   </div>
 </header>
 
-<section id="hugbunadur">
+<section id="hugbunadarthroun">
   <h2>Hugbúnaður með meiru</h2>
   <hr>
   <p class="small">Hugbúnaðarteymi lorem ipsum</p>
@@ -62,7 +62,7 @@
   </div>
 </section>
 
-<section id="ferli">
+<section id="ferlid">
   <h2>Útpælt ferli</h2>
   <hr>
   <p class="small">Aenean lacinia bibendum nulla sed consectetur.</p>
@@ -80,7 +80,7 @@
   </div>
 </section>
 
-<section id="verk" class="gray">
+<section id="verkin" class="gray">
   <h2>Dæmi um verk</h2>
   <hr>
   <p class="small">Cras justo odio dapibus ac facilisis in egestas eget quam.</p>
@@ -233,11 +233,12 @@
 <script>
   $(function() {
     var $nav = $("nav");
+    var tops = $(window).asEventStream("scroll").map(function(){ return $(document).scrollTop(); });
 
     // make the nav bar fixed position when we scroll past its top position
     Bacon.combineTemplate({
       initial: Bacon.constant($nav.offset().top),
-      top: $(window).asEventStream("scroll").map(function() { return $(document).scrollTop(); })
+      top: tops
     }).map(function(val) {
       return val.top >= val.initial ? "scrollfix" : "";
     }).onValue(function(classname) {
