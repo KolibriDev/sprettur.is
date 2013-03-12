@@ -52,4 +52,11 @@ $(function() {
       this.item.attr("class", "on");
     });
   });
+
+  mapbox.load('gudmundur.map-t1y2fg6f', function(o) {
+    console.log(o);
+    var map = mapbox.map('map', [o.layer, o.markers], null, [MM.DragHandler()]);
+    map.centerzoom(o.center, o.zoom);
+    console.log(map);
+  });
 });
