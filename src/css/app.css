@@ -118,13 +118,13 @@ nav a:hover {
  */
 section {
   min-height: 400px;
-  padding-top: 140px;
-  margin-top: -80px;
+  margin-top: 70px;
 }
 
 section.gray {
-  margin-top: 120px;
   background: var(gray);
+  margin-top: 120px;
+  padding-top: 70px;
 }
 
 
@@ -184,7 +184,6 @@ em {
 
 p {
   line-height: var(line-height-normal);
-  text-align: center;
   font-weight: lighter;
   color: var(txt-gray);
 }
@@ -192,6 +191,7 @@ p {
 p.small {
   font-size: var(font-small);
   color: var(small-gray);
+  text-align: center;
   margin-top: 10px;
   margin-bottom: 30px;
 }
@@ -221,7 +221,6 @@ p.small {
 .box.hover:hover {
   background-color: var(gray);
 }
-
 
 .center {
   text-align: center;

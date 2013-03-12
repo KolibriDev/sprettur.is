@@ -77,4 +77,4 @@ module.exports = (grunt) ->
   grunt.registerTask 'dev', ['dist', 'connect', 'watch']
 
   # Default task(s).
-  grunt.registerTask 'default', 'dist'
+  grunt.registerTask 'default', 'dev'
