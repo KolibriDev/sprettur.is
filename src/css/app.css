@@ -113,9 +113,13 @@ nav a:hover {
 }
 
 /* content */
+/* The margin and padding are required for the anchors to behave correctly with
+ *  a fixed nav on top. (http://stackoverflow.com/questions/9047703/fixed-position-navbar-obscures-anchors)
+ */
 section {
   min-height: 400px;
-  padding-top: 60px;
+  padding-top: 140px;
+  margin-top: -80px;
 }
 
 section.gray {
