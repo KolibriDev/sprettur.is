@@ -57,6 +57,8 @@ $(function() {
     console.log(o);
     var map = mapbox.map('map', [o.layer, o.markers], null, [MM.DragHandler()]);
     map.centerzoom(o.center, o.zoom);
-    console.log(map);
+
+    if (window.devicePixelRatio > 1)
+      map.tileSize = { x: 128, y: 128 };
   });
 });
