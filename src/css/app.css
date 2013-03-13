@@ -24,6 +24,8 @@
   var-line-height-normal: 25px;
 
   var-hr-width: 40px;
+
+  var-profile-height: 600px;
 }
 
 
@@ -63,7 +65,7 @@ body {
   z-index: 5;
 }
 
-#banner h1 {
+h1 {
   font-size: var(font-xlarge);
   font-family: var(font-serif);
   font-weight: normal;
@@ -129,7 +131,7 @@ section.gray {
 }
 
 
-section h2 {
+h2 {
   font-family: var(font-serif);
   font-size: var(font-xlarge);
   text-align: center;
@@ -150,14 +152,14 @@ footer {
 
 }
 
-.box h3 {
+h3 {
   font-family: var(font-serif);
   font-size: var(font-large);
   text-align: center;
   margin-top: 30px;
 }
 
-.box h4 {
+h4 {
   font-family: var(font-serif);
   font-size: var(font-large);
   margin-top: 20px;
@@ -202,8 +204,16 @@ p.small {
   color: var(black);
 }
 
+.white p {
+  color: var(white);
+}
+
 .gray p.small {
   color: var(black);
+}
+
+.white hr {
+  background-color: var(white);
 }
 
 .gray hr {
@@ -283,6 +293,70 @@ ul.tabs {
 .profile img {
   display: block;
   width: 100%;
+}
+
+/*
+ * http://cssarrowplease.com/
+ */
+.box.active {
+  border: 0;
+  color: var(white);
+  position: relative;
+  background: var(black);
+  padding: 14px;
+}
+
+.box.active:after {
+  top: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.box.active:after {
+  border-color: rgba(63, 63, 58, 0);
+  border-top-color: var(black);
+  border-width: 10px;
+  left: 50%;
+  margin-left: -10px;
+}
+
+.box.active:hover {
+  background: var(black);
+}
+
+.box.active a {
+  color: var(white);
+}
+
+.expanded {
+  height: var(profile-height);
+  margin-bottom: 20px;
+}
+
+.expandedbg {
+  background-color: var(black);
+  background: url(../images/profiles/test.jpg) center center no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: var(profile-height);
+}
+
+.overlay {
+  margin: 20px;
+  padding: 20px;
+  height: 560px;
+  background-color: rgba(var(black), 0.25);
+  color: var(white);
+}
+
+.overlay h3 {
+  margin: 40px 0;
 }
 
 .hire {

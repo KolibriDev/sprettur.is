@@ -71,6 +71,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks 'grunt-contrib-clean'
 
   grunt.loadNpmTasks 'grunt-rework'
+
   grunt.loadNpmTasks 'grunt-bower'
 
   grunt.registerTask 'dist', ['copy', 'rework', 'bower']
