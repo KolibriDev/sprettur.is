@@ -107,7 +107,7 @@ nav a {
   padding: 25px 23px;
   font-weight: lighter;
 }
-nav .on a,
+nav .active a,
 nav a:hover {
   border-bottom: var(border);
 }
@@ -257,11 +257,22 @@ ul.tabs {
   height: 100px;
   line-height: 100px;
   text-align: center;
+}
+
+.tabs li a img {
   vertical-align: middle;
 }
 
-.tabs .selected {
+.tabs .active a {
   background-color: var(black);
+}
+
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
 }
 
 .profile {
