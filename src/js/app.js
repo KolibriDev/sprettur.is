@@ -1,19 +1,10 @@
 $(function() {
-  // A short collection of one liners (sorry) to make the menu nice.
-  var $nav = $("nav");
-  var tops = $(window).asEventStream("scroll").map(function() {
-    return $(document).scrollTop();
-  });
+  /*
+   * Affix
+   */
 
-  // make the nav bar fixed position when we scroll past its top position
-  Bacon.combineTemplate({
-    initial: Bacon.constant($nav.offset().top),
-    top: tops
-  }).map(function(val) {
-    return val.top >= val.initial ? "scrollfix" : "";
-  }).skipDuplicates().onValue(function(classname) {
-    $nav.attr("class", classname);
-  })
+  var $nav = $("nav");
+  $nav.affix({ offset: $nav.offset().top });
 
   /*
    * Tabs
