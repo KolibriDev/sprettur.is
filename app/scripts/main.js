@@ -1,17 +1,23 @@
 require.config({
     paths: {
+        domready: '../components/requirejs-domready/domReady',
         jquery: '../components/jquery/jquery',
-        bootstrap: 'vendor/bootstrap'
+        affix: '../components/bootstrap/js/bootstrap-affix',
+        scrollspy: '../components/bootstrap/js/bootstrap-scrollspy'
     },
     shim: {
-        bootstrap: {
+        affix: {
             deps: ['jquery'],
-            exports: 'jquery'
+            exports: 'jQuery.fn.affix'
+        },
+        scrollspy: {
+            deps: ['jquery'],
+            exports: 'jQuery.fn.scrollspy'
         }
     }
 });
 
-require(['app', 'map', 'jquery'], function (app, map, $) {
+require(['app', 'jquery', 'map', ], function (app, $) {
     'use strict';
     // use app here
     console.log(app);

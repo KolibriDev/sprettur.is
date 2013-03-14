@@ -1,16 +1,13 @@
-require(['jquery', 'bootstrap'], function ($) {
+require(['domready!', 'jquery', 'affix', 'scrollspy'], function (doc, $) {
     'use strict';
-
-  /*
-   * Affix
-   */
 
     var $nav = $('nav');
     $nav.affix({ offset: $nav.offset().top });
+    $nav.scrollspy({ offset: 80 });
 
-  /*
-   * Tabs
-   */
+    /*
+    * Tabs
+    */
 
     $('a[data-toggle="tab"]').on('shown', function (e) {
         console.log(e);
