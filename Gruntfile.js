@@ -144,7 +144,8 @@ module.exports = function (grunt) {
 
                 use: [
                     ['rework.vars'],
-                    ['rework.colors']
+                    ['rework.colors'],
+                    ['rework.at2x']
                 ]
             }
         },
