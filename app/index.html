@@ -6,9 +6,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
 <title>Sprettur</title>
 <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,700,300|Merriweather+Sans:400,300,700" type="text/css">
-<link rel="stylesheet" href="css/normalize.css" />
-<link rel="stylesheet" href="css/unsemantic-grid-responsive-tablet.css" />
-<link rel="stylesheet" href="css/app.css" />
+<link rel="stylesheet" href="components/normalize-css/normalize.css" />
+<link rel="stylesheet" href="components/unsemantic/assets/stylesheets/unsemantic-grid-responsive-tablet.css" />
+<link rel="stylesheet" href="styles/app.css" />
 <link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
 <link type="text/plain" rel="author" href="humans.txt" />
 <!--[if lt IE 9]>
@@ -281,9 +281,14 @@
 
 </footer>
 
-<script src="js/jquery.js"></script>
+<!-- build:js scripts/main.js -->
+<script data-main="scripts/main" src="components/requirejs/require.js"></script>
+<!-- endbuild -->
+
+
+<!--script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
-<script src="js/app.js"></script>
+<script src="js/app.js"></script-->
 </body>
 </html>

@@ -32,9 +32,9 @@ module.exports = function (grunt) {
                 files: ['test/spec/{,*/}*.coffee'],
                 tasks: ['coffee:test']
             },
-            compass: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: []
+            rework: {
+                files: ['<%= yeoman.app %>/styles/{,*/}*.{css}'],
+                tasks: ['rework']
             },
             livereload: {
                 files: [
@@ -130,6 +130,18 @@ module.exports = function (grunt) {
                     src: '*.coffee',
                     dest: 'test/spec'
                 }]
+            }
+        },
+        rework: {
+            '.tmp/styles/app.css': 'app/styles/app.css',
+
+            options: {
+                toString: {compress: true},
+
+                use: [
+                    ['rework.vars'],
+                    ['rework.colors']
+                ]
             }
         },
         // not used since Uglify task does concat,
@@ -241,6 +253,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'coffee:dist',
+            'rework',
             'livereload-start',
             'connect:livereload',
             'open',
@@ -251,6 +264,7 @@ module.exports = function (grunt) {
     grunt.registerTask('test', [
         'clean:server',
         'coffee',
+        'rework',
         'connect:test',
         'mocha'
     ]);
@@ -258,6 +272,7 @@ module.exports = function (grunt) {
     grunt.registerTask('build', [
         'clean:dist',
         'coffee',
+        'rework',
         'useminPrepare',
         'requirejs',
         'imagemin',

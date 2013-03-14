@@ -18,6 +18,7 @@
     "grunt-contrib-livereload": "0.1.1",
     "grunt-bower-hooks": "~0.2.0",
     "grunt-usemin": "~0.1.9",
+    "grunt-rework": "~0.0.3",
     "grunt-regarde": "~0.1.1",
     "grunt-requirejs": "~0.3.2",
     "grunt-mocha": "~0.2.2",
