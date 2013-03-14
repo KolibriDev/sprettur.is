@@ -15,7 +15,7 @@
 <script src="js/html5shiv.js"></script>
 <![endif]-->
 </head>
-<body data-spy="scroll" data-target="nav" data-offset="80">
+<body>
 
 <header>
     <div id="brand">
@@ -63,23 +63,6 @@
   </div>
 </section>
 
-<section id="ferlid">
-  <h2>Ferlið er skemmtilegt og árangursríkt</h2>
-  <hr>
-  <p class="small">Við erum frumkvöðlar í Agile og Lean aðferðafræði á Íslandi.</p>
-
-  <div class="grid-container">
-    <div class="grid-100">
-      <div class="box center">
-        <div class="grid-container">
-          <div class="grid-50 prefix-25">
-            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <section id="verkin" class="gray">
   <h2>Verkin okkar</h2>
@@ -120,6 +103,24 @@
 
           <div id="meniga" class="tab-pane">
             <p>Meniga</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ferlid">
+  <h2>Ferlið er skemmtilegt og árangursríkt</h2>
+  <hr>
+  <p class="small">Við erum frumkvöðlar í Agile og Lean aðferðafræði á Íslandi.</p>
+
+  <div class="grid-container">
+    <div class="grid-100">
+      <div class="box center">
+        <div class="grid-container">
+          <div class="grid-50 prefix-25">
+            <p>Maecenas sed diam eget risus varius blandit sit amet non magna. Donec sed odio dui. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Maecenas sed diam eget risus varius blandit sit amet non magna. Donec ullamcorper nulla non metus auctor fringilla. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
           </div>
         </div>
       </div>
@@ -189,7 +190,7 @@
       </div>
     </div>
 
-    <div class="grid-100 expanded">
+    <!--div class="grid-100 expanded">
       <div class="expandedbg">
         <div class="grid-container">
           <div class="grid-50 overlay center white">
@@ -202,7 +203,7 @@
         </div>
 
       </div>
-    </div>
+    </div-->
 
     <div class="grid-25 tablet-grid-33 mobile-grid-100">
       <div class="box hover vcard profile">
@@ -234,40 +235,32 @@
   <section id="sprettur">
     <div class="grid-container">
       <div class="grid-100">
-        <div class="box vcard">
+        <div class="box center">
           <h2>Sprettur</h2>
           <hr>
           <p class="small">Hvar erum við til staðar</p>
           <hr>
-          <p class="small adr">
-            <em class="fn">Sprettur - þróun og stjórnun efh.</em><br>
+          <p>
             <span class="street-address">Laugavegur 26</span> (gengið inn frá Grettisgötu)<br>
             <span class="postal-code">101 Reykjavík</span>
           </p>
-          <p class="small">
-            Kt: 550507-1960<br>
-            VSK: 094306
-          </p>
-          <p class="small">
-            <em>Hafðu samband</em><br>
+          <hr>
+          <p>
             <a class="tel" href="tel:+354 522 8900">522 8900</a><br>
             <a class="email" href="mailto:info@sprettur.is">info@sprettur.is</a>
           </p>
-          <p class="small">
-            <em>Fyrir fjármál og styrki</em><br>
-            <a href="mailto:bokhald@sprettur.is">bokhald@sprettur.is</a>
-          </p>
           <hr>
+
           <p class="small">
             <em>Sprettur á vörumerkin Agile Ísland og Lean Ísland</em>
           </p>
 
           <div class="grid-container">
             <div class="prefix-20 grid-30 center">
-              <img src="images/agile_island.png">
+              <a href="http://agileisland.is"><img src="images/agile_island.png"></a>
             </div>
             <div class="grid-30 center">
-              <img src="images/lean_island.png">
+              <a href="http://leanisland.is"><img src="images/lean_island.png"></a>
             </div>
         </div>
       </div>
@@ -277,8 +270,50 @@
   <div id="map"></div>
 </div>
 
-<footer>
+<footer class="vcard">
+  <div class="grid-container">
+    <div class="grid-25">
+      Logo
+    </div>
 
+    <div class="grid-15">
+      <em class="fn">Sprettur<br> - þróun og stjórnun efh.</em><br>
+      Kt: 550507-1960<br>
+      VSK: 094306
+
+      <p class="adr hide">
+        <span class="street-address">Laugavegur 26</span><br>
+        <span class="postal-code">101 Reykjavík</span>
+      </p>
+    </div>
+
+    <div class="grid-15">
+      <em>Hafðu samband</em><br>
+      <a class="tel" href="tel:+354 522 8900">522 8900</a><br>
+      <a class="email" href="mailto:info@sprettur.is">info@sprettur.is</a>
+    </div>
+
+    <div class="grid-15">
+      <em>Fyrir fjármál og styrki</em><br>
+      <a href="mailto:bokhald@sprettur.is">bokhald@sprettur.is</a>
+    </div>
+
+    <div class="grid-15">
+      <em>Við á netinu</em><br>
+      <a href="http://www.facebook.com/sprettur.is">Facebook</a><br>
+      <a href="https://twitter.com/sprettur">Twitter</a><br>
+    </div>
+
+    <div class="grid-15">
+      <em>Við á vefsíðunni</em><br>
+      <a href="#top">Efst upp</a><br>
+      <a href="#hugbunadarthroun">Hugbúnaðarþróun</a><br>
+      <a href="#verkin">Verkin</a><br>
+      <a href="#ferlid">Ferlið</a><br>
+      <a href="#starfsfolk">Starfsfólk</a><br>
+    </div>
+
+  </div>
 </footer>
 
 <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
