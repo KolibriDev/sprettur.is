@@ -1,4 +1,4 @@
-require(['domready!', 'jquery', 'affix', 'scrollspy'], function (doc, $) {
+require(['domready!', 'jquery', 'affix', 'scrollspy', 'tab'], function (doc, $) {
     'use strict';
 
     var $nav = $('nav');

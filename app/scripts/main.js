@@ -3,7 +3,8 @@ require.config({
         domready: '../components/requirejs-domready/domReady',
         jquery: '../components/jquery/jquery',
         affix: '../components/bootstrap/js/bootstrap-affix',
-        scrollspy: '../components/bootstrap/js/bootstrap-scrollspy'
+        scrollspy: '../components/bootstrap/js/bootstrap-scrollspy',
+        tab: '../components/bootstrap/js/bootstrap-tab'
     },
     shim: {
         affix: {
@@ -13,11 +14,15 @@ require.config({
         scrollspy: {
             deps: ['jquery'],
             exports: 'jQuery.fn.scrollspy'
+        },
+        tab: {
+            deps: ['jquery'],
+            exports: 'jQuery.fn.tab'
         }
     }
 });
 
-require(['app', 'jquery', 'map', ], function (app, $) {
+require(['app', 'jquery', 'map'], function (app, $) {
     'use strict';
     // use app here
     console.log(app);
