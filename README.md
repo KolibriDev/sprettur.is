@@ -8,11 +8,21 @@
 ## Building
 
     $ npm install
-    $ grunt
+    $ bower install
+    $ grunt server
 
 
 ## Deploying
 
+    $ grund build
+
 ## Team
 
+### Design
+
+* [Steinar Ingi Farestveit](http://steifar.com)
+
+### Development
+
 * [Guðmundur Bjarni Ólafsson](http://github.com/gudmundur)
+* [Árni Hermann Reynisson](http://github.com/arnihermann)
