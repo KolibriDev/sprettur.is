@@ -33,13 +33,13 @@ module.exports = function (grunt) {
                 tasks: ['coffee:test']
             },
             rework: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.{css}'],
-                tasks: ['rework']
+                files: ['<%= yeoman.app %>/styles/*.css'],
+                tasks: ['rework:dist']
             },
             livereload: {
                 files: [
                     '<%= yeoman.app %>/*.html',
-                    '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+                    '.tmp/styles/{,*/}*.css',
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,webp}'
                 ],
@@ -48,9 +48,9 @@ module.exports = function (grunt) {
         },
         connect: {
             options: {
-                port: 9000,
+                port: 8000,
                 // change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
+                hostname: '0.0.0.0'
             },
             livereload: {
                 options: {
@@ -133,7 +133,11 @@ module.exports = function (grunt) {
             }
         },
         rework: {
-            '.tmp/styles/app.css': 'app/styles/app.css',
+            dist: {
+                files: [{
+                    '.tmp/styles/app.css': '<%= yeoman.app %>/styles/app.css'
+                }]
+            },
 
             options: {
                 toString: {compress: true},
@@ -253,7 +257,7 @@ module.exports = function (grunt) {
         grunt.task.run([
             'clean:server',
             'coffee:dist',
-            'rework',
+            'rework:dist',
             'livereload-start',
             'connect:livereload',
             'open',
