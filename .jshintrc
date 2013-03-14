@@ -7,6 +7,10 @@
     "camelcase": true,
     "curly": true,
     "eqeqeq": true,
+    "globals": {
+        "mapbox": true,
+        "MM": true
+    },
     "immed": true,
     "indent": 4,
     "latedef": true,
