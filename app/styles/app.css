@@ -410,6 +410,16 @@ ul.tabs {
   margin-bottom: 10px;
 }
 
+@media tablet {
+  .profile {
+    min-height: 390px;
+  }
+
+  .hire {
+    min-height: 390px;
+  }
+}
+
 .floater {
   position: relative;
   margin-top: 160px;
