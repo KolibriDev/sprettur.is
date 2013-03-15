@@ -159,25 +159,6 @@ module.exports = function (grunt) {
         /*concat: {
             dist: {}
         },*/
-        requirejs: {
-            dist: {
-                // Options: https://github.com/jrburke/r.js/blob/master/build/example.build.js
-                options: {
-                    // `name` and `out` is set by grunt-usemin
-                    baseUrl: 'app/scripts',
-                    optimize: 'none',
-                    // TODO: Figure out how to make sourcemaps work with grunt-usemin
-                    // https://github.com/yeoman/grunt-usemin/issues/30
-                    //generateSourceMaps: true,
-                    // required to support SourceMaps
-                    // http://requirejs.org/docs/errors.html#sourcemapcomments
-                    preserveLicenseComments: false,
-                    useStrict: true,
-                    wrap: true,
-                    //uglify2: {} // https://github.com/mishoo/UglifyJS2
-                }
-            }
-        },
         useminPrepare: {
             html: '<%= yeoman.app %>/index.html',
             options: {
@@ -196,7 +177,7 @@ module.exports = function (grunt) {
                 files: [{
                     expand: true,
                     cwd: '<%= yeoman.app %>/images',
-                    src: '{,*/}*.{png,jpg,jpeg}',
+                    src: '{,**/}*.{png,jpg,jpeg}',
                     dest: '<%= yeoman.dist %>/images'
                 }]
             }
@@ -284,7 +265,6 @@ module.exports = function (grunt) {
         'coffee',
         'rework',
         'useminPrepare',
-        'requirejs',
         'imagemin',
         'htmlmin',
         'concat',

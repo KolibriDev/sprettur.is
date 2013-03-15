@@ -451,6 +451,10 @@ footer div {
  */
 
 .logo-ja {
+  padding-top: 16px;
+}
+
+.logo-ja span {
   background-image: url(../images/work/logo_ja.png);
   width: 68px;
   height: 68px;
@@ -459,6 +463,10 @@ footer div {
 }
 
 .logo-sjova {
+  padding-top: 23px;
+}
+
+.logo-sjova span {
   background-image: url(../images/work/logo_sjova.png);
   width: 113px;
   height: 54px;
@@ -467,6 +475,10 @@ footer div {
 }
 
 .logo-eimskip {
+  padding-top: 33px;
+}
+
+.logo-eimskip span {
   background-image: url(../images/work/logo_eimskip.png);
   width: 146px;
   height: 35px;
@@ -474,7 +486,7 @@ footer div {
   margin: 0 auto;
 }
 
-.logo-agile {
+.logo-agile span {
   background-image: url(../images/agile_island.png);
   width: 92px;
   height: 67px;
