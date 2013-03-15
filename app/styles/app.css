@@ -578,6 +578,7 @@ footer div {
 .process .loop img { width: 61px; }
 
 @media at-most-tablet {
+  .process .item { margin-bottom: 30px; }
   .process .item:nth-child(even) { text-align: left; }
   .process .item:nth-child(odd), .process .item:last-child { text-align: right; }
 
@@ -590,4 +591,6 @@ footer div {
 
   .process .loop { padding: 10px; }
 }
-
+@media mobile {
+  .process p { margin-top: 40px; }
+}
