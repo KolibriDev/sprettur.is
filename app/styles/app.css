@@ -7,7 +7,6 @@
 
   var-gray: #dfdfdf;
   var-txt-gray: #848484;
-  var-small-gray: #b8b8b8;
 
   var-border-size: 4px;
   var-border: var(border-size) solid var(gray);
@@ -15,6 +14,7 @@
   var-font-serif: 'Merriweather', serif;
   var-font-sans-serif: 'Merriweather Sans', sans-serif;
 
+  var-font-xxlarge: 50px;
   var-font-xlarge: 40px;
   var-font-large: 20px;
   var-font-normal: 14px;
@@ -23,6 +23,14 @@
   var-line-height-xlarge: 50px;
   var-line-height-normal: 25px;
   var-line-height-small: 20px;
+
+  var-font-mobile-xxlarge: 35px;
+  var-font-mobile-xlarge: 30px;
+  var-font-mobile-small: 14px;
+
+  var-line-height-mobile-xxlarge: 50px;
+  var-line-height-mobile-xlarge: 40px;
+  var-line-height-mobile-small: 25px;
 
   var-hr-width: 40px;
 
@@ -76,16 +84,6 @@ body {
   width: 100%;
   z-index: 5;
 }
-
-h1 {
-  font-size: var(font-xlarge);
-  font-family: var(font-serif);
-  font-weight: normal;
-  margin: 0;
-  position: relative;
-  z-index: 10;
-}
-
 
 /* menu */
 nav {
@@ -142,15 +140,6 @@ section.gray {
   padding-top: 70px;
 }
 
-
-h2 {
-  font-family: var(font-serif);
-  font-size: var(font-xlarge);
-  text-align: center;
-  margin-bottom: 10px;
-  margin-top: 0;
-}
-
 footer {
   background-color: var(black);
   color: var(white);
@@ -175,7 +164,23 @@ footer a {
   min-height: 400px;
   padding: 10px;
   background: var(white);
+}
 
+h1 {
+  font-family: var(font-serif);
+  font-size: var(font-xxlarge);
+  font-weight: normal;
+  margin: 0;
+  position: relative;
+  z-index: 10;
+}
+
+h2 {
+  font-family: var(font-serif);
+  font-size: var(font-xlarge);
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 0;
 }
 
 h3 {
@@ -196,6 +201,16 @@ h5 {
   color: var(txt-gray);
   font-weight: lighter;
   margin: 0;
+}
+
+@media mobile {
+  h1 {
+    font-size: var(font-mobile-xxlarge);
+  }
+  h2 {
+    font-size: var(font-mobile-xlarge);
+    line-height: var(line-height-xlarge);
+  }
 }
 
 hr {
@@ -234,10 +249,17 @@ p {
 
 p.small {
   font-size: var(font-small);
-  color: var(small-gray);
+  color: var(txt-gray);
   text-align: center;
   margin-top: 10px;
   margin-bottom: 30px;
+}
+
+@media mobile {
+  p.small {
+    font-size: var(font-mobile-small);
+    line-height: var(line-height-mobile-small);
+  }
 }
 
 .gray p,
