@@ -464,17 +464,31 @@ ul.tabs {
   }
 }
 
-.floater {
-  position: relative;
-  margin-top: 160px;
+#sprettur {
+  margin-top: 120px;
 }
 
-#sprettur {
-  width: 590px;
-  position: absolute;
-  margin-top: -60px;
-  padding-top: 0;
-  z-index: 1;
+@media desktop {
+  .spretturwrap {
+    position: absolute;
+    width: 50%;
+    z-index: 1;
+  }
+
+  .spretturbox {
+    width: 590px;
+    float: right;
+    margin-top: -60px;
+    padding: 10px;
+  }
+
+  .spretturbox p {
+    margin-bottom: 60px;
+  }
+
+  .spretturbox .box {
+    padding: 80px 0px;
+  }
 }
 
 #map {
