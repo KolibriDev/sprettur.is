@@ -546,7 +546,10 @@ footer div {
   .process .item:nth-child(even) { text-align: left; }
   .process .item:nth-child(odd), .process .item:last-child { text-align: right; }
 
-  .process p { padding-top: 40px; }
+  .process p {
+    margin-left: 0;
+    margin-right: 0;
+  }
   .process .item:nth-child(even) p { text-align: right; }
   .process .item:nth-child(odd) p, .process .item:last-child p { text-align: left; }
 
