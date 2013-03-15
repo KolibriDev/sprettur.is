@@ -535,6 +535,8 @@ footer div {
 
 .process p {
   margin-top: 50px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 
 .process .item img { width: 121px; }
