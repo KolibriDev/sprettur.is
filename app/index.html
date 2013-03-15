@@ -12,13 +12,12 @@
 <link rel="stylesheet" href="components/normalize-css/normalize.css" />
 <link rel="stylesheet" href="components/unsemantic/assets/stylesheets/unsemantic-grid-responsive-tablet.css" />
 <link rel="stylesheet" href="styles/app.css" />
-<link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
 <link type="text/plain" rel="author" href="humans.txt" />
 <!--[if lt IE 9]>
 <script src="js/html5shiv.js"></script>
 <![endif]-->
 </head>
-<body>
+<body data-spy="scroll" data-target="nav" data-offset="80">
 
 <header>
     <div id="brand">
@@ -404,10 +403,15 @@
 </footer>
 
 <script src='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.js'></script>
+
 <!-- build:js scripts/main.js -->
-<script data-main="scripts/main" src="components/requirejs/require.js"></script>
+<script src="components/jquery/jquery.js"></script>
+<script src="components/bootstrap/js/bootstrap-affix.js"></script>
+<script src="components/bootstrap/js/bootstrap-scrollspy.js"></script>
+<script src="components/bootstrap/js/bootstrap-tab.js"></script>
+<script src="components/retina.js-js/src/retina.js"></script>
+<script src="scripts/app.js"></script>
 <!-- endbuild -->
-
-
+<link href='http://api.tiles.mapbox.com/mapbox.js/v0.6.7/mapbox.css' rel='stylesheet' />
 </body>
 </html>

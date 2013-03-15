@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "dependencies": {
     "jquery": "~1.8.3",
-    "requirejs": "~2.1.4",
-    "requirejs-domready": "~2.0.1",
     "html5shiv": "~3.6.2",
     "bootstrap": "~2.3.1",
     "normalize-css": "~2.1.0",
+    "retina.js-js": "alvivi/retinajs",
     "unsemantic": "nathansmith/unsemantic"
   },
   "devDependencies": {}
