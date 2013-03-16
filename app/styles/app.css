@@ -175,6 +175,12 @@ section.gray {
   padding-top: 70px;
 }
 
+@media mobile {
+  section.gray {
+    min-height: 700px;
+  }
+}
+
 footer {
   background-color: var(black);
   color: var(white);
@@ -192,13 +198,6 @@ footer em {
 
 footer a {
   color: var(white);
-}
-
-.box {
-  border: 4px solid var(gray);
-  min-height: 400px;
-  padding: 10px;
-  background: var(white);
 }
 
 h1 {
@@ -318,6 +317,17 @@ p.small {
   background-color: var(black);
 }
 
+/*
+ * boxes
+ */
+
+.box {
+  border: 4px solid var(gray);
+  min-height: 400px;
+  padding: 10px;
+  background: var(white);
+}
+
 .box.padding {
   padding: 10px 20px;
 }
@@ -329,6 +339,32 @@ p.small {
 .box.solid,
 .box.hover:hover {
   background-color: var(gray);
+}
+
+@media desktop {
+  .desktop-box {
+    border: 4px solid var(gray);
+    min-height: 400px;
+    padding: 10px;
+    background: var(white);
+  }
+}
+
+@media tablet {
+  .desktop-box {
+    border: 4px solid var(gray);
+    min-height: 400px;
+    padding: 10px;
+    background: var(white);
+  }
+}
+
+@media mobile {
+  .mobile-box {
+    border: 4px solid var(gray);
+    padding: 10px;
+    background: var(white);
+  }
 }
 
 .hide {
@@ -361,7 +397,9 @@ p.small {
 }
 
 ul.tabs {
+  padding: 0;
   margin: 0;
+  height: 100px;
 }
 
 .tabs li {
@@ -369,11 +407,15 @@ ul.tabs {
 }
 
 .tabs li a {
-  background-color: var(white);
+  background-color: var(gray);
   display: block;
   height: 100px;
   line-height: 100px;
   text-align: center;
+}
+
+.gray .tabs li a {
+  background-color: var(white);
 }
 
 .tabs li a img {
@@ -382,6 +424,12 @@ ul.tabs {
 
 .tabs .active a {
   background-color: var(black);
+  color: var(white);
+}
+
+.gray .tabs .active a {
+  background-color: var(black);
+  color: var(white);
 }
 
 .tab-pane {
@@ -390,6 +438,25 @@ ul.tabs {
 
 .tab-pane.active {
   display: block;
+}
+
+@media mobile {
+  ul.tabs {
+    height: 50px;
+  }
+
+  .tabs li a {
+    height: 50px;
+    line-height: 50px;
+  }
+
+  .mobile-tab-pane {
+    display: none;
+  }
+
+  .mobile-tab-pane.active {
+    display: block;
+  }
 }
 
 .client {
@@ -505,11 +572,11 @@ ul.tabs {
   }
 }
 
-#sprettur {
-  margin-top: 120px;
-}
-
 @media desktop {
+  #sprettur {
+    margin-top: 120px;
+  }
+
   .spretturwrap {
     position: absolute;
     width: 50%;
@@ -532,6 +599,13 @@ ul.tabs {
   }
 }
 
+@media at-most-tablet {
+  .spretturbox {
+    margin: 0 20px;
+    margin-bottom: 70px;
+  }
+}
+
 #map {
   width: 100%;
   height: 560px;
@@ -549,52 +623,54 @@ footer div {
  * Logos
  */
 
-.logo-ja {
-  padding-top: 16px;
-}
+@media at-least-tablet {
+  .logo-ja {
+    padding-top: 16px;
+  }
 
-.logo-ja span {
-  background-image: url(../images/work/logo_ja.png);
-  width: 68px;
-  height: 68px;
-  display: block;
-  margin: 0 auto;
-}
+  .logo-ja span {
+    background-image: url(../images/work/logo_ja.png);
+    width: 68px;
+    height: 68px;
+    display: block;
+    margin: 0 auto;
+  }
 
-.logo-sjova {
-  padding-top: 23px;
-}
+  .logo-sjova {
+    padding-top: 23px;
+  }
 
-.logo-sjova span {
-  background-image: url(../images/work/logo_sjova.png);
-  width: 113px;
-  height: 54px;
-  display: block;
-  margin: 0 auto;
-}
+  .logo-sjova span {
+    background-image: url(../images/work/logo_sjova.png);
+    width: 113px;
+    height: 54px;
+    display: block;
+    margin: 0 auto;
+  }
 
-.logo-eimskip {
-  padding-top: 33px;
-}
+  .logo-eimskip {
+    padding-top: 33px;
+  }
 
-.logo-eimskip span {
-  background-image: url(../images/work/logo_eimskip.png);
-  width: 146px;
-  height: 35px;
-  display: block;
-  margin: 0 auto;
-}
+  .logo-eimskip span {
+    background-image: url(../images/work/logo_eimskip.png);
+    width: 146px;
+    height: 35px;
+    display: block;
+    margin: 0 auto;
+  }
 
-.logo-meniga {
-  padding-top: 30px;
-}
+  .logo-meniga {
+    padding-top: 30px;
+  }
 
-.logo-meniga span {
-  background-image: url(../images/work/logo_meniga.png);
-  width: 140px;
-  height: 41px;
-  display: block;
-  margin: 0 auto;
+  .logo-meniga span {
+    background-image: url(../images/work/logo_meniga.png);
+    width: 140px;
+    height: 41px;
+    display: block;
+    margin: 0 auto;
+  }
 }
 
 .logo-agile {

@@ -149,6 +149,7 @@ module.exports = function (grunt) {
                     ['rework.media', {
                         mobile: 'screen and (max-width: 767px)',
                         tablet: 'screen and (min-width: 767px) and (max-width: 1025px)',
+                        'at-least-tablet': 'screen and (min-width: 767px)',
                         'at-most-tablet': 'screen and (max-width: 1025px)',
                         desktop: 'screen and (min-width: 1025px)'
                     }]
