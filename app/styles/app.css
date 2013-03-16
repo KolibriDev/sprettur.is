@@ -45,9 +45,11 @@ body {
 
 /* header */
 #brand {
-  height: 120px;
-  padding-top: 32px;
+  position: relative;
+  padding-top: 30px;
   text-align: center;
+  padding-bottom: 130px;
+  z-index: 10;
 }
 
 .logo {
@@ -69,16 +71,14 @@ body {
   background-size: cover;
   color: #fff;
   height: 476px;
-  padding-top: 195px;
   position: relative;
   text-align: center;
 }
 
 #overlay {
-  background: var(black);
+  background: rgba(var(black), 0.85);
   left: 0;
   height: 100%;
-  opacity: 0.85;
   position: absolute;
   top: 0;
   width: 100%;
