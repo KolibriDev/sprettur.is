@@ -544,6 +544,18 @@ footer div {
   margin: 0 auto;
 }
 
+.logo-meniga {
+  padding-top: 30px;
+}
+
+.logo-meniga span {
+  background-image: url(../images/work/logo_meniga.png);
+  width: 140px;
+  height: 41px;
+  display: block;
+  margin: 0 auto;
+}
+
 .logo-agile {
   background-image: url(../images/agile_island.png);
   width: 92px;
@@ -565,7 +577,6 @@ footer div {
   width: 81px;
   height: 29px;
   display: block;
-  margin: 0 auto;
 }
 
 
