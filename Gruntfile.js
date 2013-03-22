@@ -33,13 +33,13 @@ module.exports = function (grunt) {
                 tasks: ['coffee:test']
             },
             rework: {
-                files: ['<%= yeoman.app %>/styles/*.css'],
+                files: ['<%= yeoman.app %>/styles/*.rcss'],
                 tasks: ['rework:dist']
             },
             livereload: {
                 files: [
                     '<%= yeoman.app %>/*.html',
-                    '.tmp/styles/{,*/}*.css',
+                    '<%= yeoman.app %>/styles/*.css',
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,webp}'
                 ],
@@ -135,7 +135,7 @@ module.exports = function (grunt) {
         rework: {
             dist: {
                 files: [{
-                    '.tmp/styles/app.css': '<%= yeoman.app %>/styles/app.css'
+                    'app/styles/app.css': '<%= yeoman.app %>/styles/app.rcss'
                 }]
             },
 
