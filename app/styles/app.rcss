@@ -195,6 +195,7 @@ footer {
 
 footer em {
   color: var(white);
+  font-style: normal;
   font-weight: normal;
 }
 
@@ -264,7 +265,6 @@ a {
 }
 
 em {
-  font-style: normal;
   color: var(black);
 }
 
@@ -568,6 +568,8 @@ ul.tabs {
     min-height: 390px;
   }
 }
+
+#sprettur em { font-style: normal; }
 
 @media desktop {
   #sprettur {
