@@ -12,14 +12,6 @@ $(function () {
     });
 
     /*
-    * Tabs
-    */
-
-    $('a[data-toggle="tab"]').on('shown', function (e) {
-        console.log(e);
-    });
-
-    /*
      * Map
      */
     mapbox.load('gudmundur.map-t1y2fg6f', function (o) {

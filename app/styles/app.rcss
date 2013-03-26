@@ -343,16 +343,7 @@ p.small {
   background-color: var(gray);
 }
 
-@media desktop {
-  .desktop-box {
-    border: 4px solid var(gray);
-    min-height: 400px;
-    padding: 10px;
-    background: var(white);
-  }
-}
-
-@media tablet {
+@media at-least-tablet {
   .desktop-box {
     border: 4px solid var(gray);
     min-height: 400px;
@@ -367,6 +358,10 @@ p.small {
     padding: 10px;
     background: var(white);
   }
+}
+
+.active {
+  display: inline;
 }
 
 .hide {

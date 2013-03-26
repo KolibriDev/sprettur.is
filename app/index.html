@@ -95,19 +95,22 @@
 
   <div class="grid-container">
     <div class="screenshot hide-on-tablet hide-on-mobile">
-      <a href="http://ja.is"><img src="images/work/screenshot_ja.png"></a>
+      <a class="tab-pane ja active" href="http://ja.is"><img src="images/work/screenshot_ja.png"></a>
+      <a class="tab-pane sjova" href="http://sjova.is"><img src="images/work/screenshot_sjova.png"></a>
+      <a class="tab-pane eimskip" href="http://eimskip.is"><img src="images/work/screenshot_eimskip.png"></a>
+      <a class="tab-pane meniga" href="http://meniga.is"><img src="images/work/screenshot_meniga.png"></a>
     </div>
 
     <div class="prefix-35 grid-65">
       <ul class="tabs grid-parent">
-        <li class="grid-25 tablet-grid-25 mobile-grid-25 active"><a href="#ja" data-toggle="tab" class="logo-ja"><span class="hide-text">Já.is</span></a></li>
-        <li class="grid-25 tablet-grid-25 mobile-grid-25"><a href="#sjova" data-toggle="tab" class="logo-sjova"><span class="hide-text">Sjóvá</span></a></li>
-        <li class="grid-25 tablet-grid-25 mobile-grid-25"><a href="#eimskip" data-toggle="tab" class="logo-eimskip"><span class="hide-text">Eimskip</span></a></li>
-        <li class="grid-25 tablet-grid-25 mobile-grid-25"><a href="#meniga" data-toggle="tab" class="logo-meniga"><span class="hide-text">Meniga</span></a></li>
+        <li class="grid-25 tablet-grid-25 mobile-grid-25 active"><a data-target=".ja" data-toggle="tab" class="logo-ja"><span class="hide-text">Já.is</span></a></li>
+        <li class="grid-25 tablet-grid-25 mobile-grid-25"><a data-target=".sjova" data-toggle="tab" class="logo-sjova"><span class="hide-text">Sjóvá</span></a></li>
+        <li class="grid-25 tablet-grid-25 mobile-grid-25"><a data-target=".eimskip" data-toggle="tab" class="logo-eimskip"><span class="hide-text">Eimskip</span></a></li>
+        <li class="grid-25 tablet-grid-25 mobile-grid-25"><a data-target=".meniga" data-toggle="tab" class="logo-meniga"><span class="hide-text">Meniga</span></a></li>
       </ul>
 
       <div class="grid-parent client">
-        <div id="ja" class="tab-pane active">
+        <div class="tab-pane ja active">
           <div class="grid-25 tablet-grid-25">
             <h5>Hver og hvenær</h5>
             <p>Já Upplýsingaveitur 2012-2013.</p>
@@ -130,7 +133,7 @@
           </div>
         </div>
 
-        <div id="sjova" class="tab-pane">
+        <div class="tab-pane sjova">
           <div class="grid-25 tablet-grid-25">
             <h5>Hver og hvenær</h5>
             <p>Sjóvá 2011-í dag.</p>
@@ -152,7 +155,7 @@
           </div>
         </div>
 
-        <div id="eimskip" class="tab-pane">
+        <div class="tab-pane eimskip">
           <div class="grid-25 tablet-grid-25">
             <h5>Hver og hvenær</h5>
             <p>Eimskip Flytjandi 2010-í dag.</p>
@@ -172,7 +175,7 @@
           </div>
         </div>
 
-        <div id="meniga" class="tab-pane">
+        <div class="tab-pane meniga">
           <div class="grid-25 tablet-grid-25">
             <h5>Hver og hvenær</h5>
             <p>Meniga 2013.</p>
