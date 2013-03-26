@@ -61,7 +61,7 @@ body {
 }
 
 #banner {
-  background: var(black) url(../images/banner1.jpg) center center no-repeat;
+  background: var(black) url(../images/banner1.jpg) no-repeat center center;
   background-size: cover;
   color: #fff;
   height: 476px;
@@ -70,7 +70,7 @@ body {
 }
 
 #overlay {
-  background: rgba(var(black), 0.85);
+  background: rgba(var(black), 0.55);
   left: 0;
   height: 100%;
   position: absolute;
