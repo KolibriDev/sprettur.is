@@ -625,54 +625,52 @@ footer div {
  * Logos
  */
 
-@media at-least-tablet {
-  .logo-ja {
-    padding-top: 16px;
-  }
+.logo-ja {
+  padding-top: 16px;
+}
 
-  .logo-ja span {
-    background-image: url(../images/work/logo_ja.png);
-    width: 68px;
-    height: 68px;
-    display: block;
-    margin: 0 auto;
-  }
+.logo-ja span {
+  background-image: url(../images/work/logo_ja.png);
+  width: 68px;
+  height: 68px;
+  display: block;
+  margin: 0 auto;
+}
 
-  .logo-sjova {
-    padding-top: 23px;
-  }
+.logo-sjova {
+  padding-top: 23px;
+}
 
-  .logo-sjova span {
-    background-image: url(../images/work/logo_sjova.png);
-    width: 113px;
-    height: 54px;
-    display: block;
-    margin: 0 auto;
-  }
+.logo-sjova span {
+  background-image: url(../images/work/logo_sjova.png);
+  width: 113px;
+  height: 54px;
+  display: block;
+  margin: 0 auto;
+}
 
-  .logo-eimskip {
-    padding-top: 33px;
-  }
+.logo-eimskip {
+  padding-top: 33px;
+}
 
-  .logo-eimskip span {
-    background-image: url(../images/work/logo_eimskip.png);
-    width: 146px;
-    height: 35px;
-    display: block;
-    margin: 0 auto;
-  }
+.logo-eimskip span {
+  background-image: url(../images/work/logo_eimskip.png);
+  width: 146px;
+  height: 35px;
+  display: block;
+  margin: 0 auto;
+}
 
-  .logo-meniga {
-    padding-top: 30px;
-  }
+.logo-meniga {
+  padding-top: 30px;
+}
 
-  .logo-meniga span {
-    background-image: url(../images/work/logo_meniga.png);
-    width: 140px;
-    height: 41px;
-    display: block;
-    margin: 0 auto;
-  }
+.logo-meniga span {
+  background-image: url(../images/work/logo_meniga.png);
+  width: 140px;
+  height: 41px;
+  display: block;
+  margin: 0 auto;
 }
 
 .logo-agile {
