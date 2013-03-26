@@ -111,7 +111,7 @@ nav li {
 
 nav a {
   color: var(white);
-  padding: 25px 23px;
+  padding: 23px 23px;
   font-weight: lighter;
 }
 nav .active a,
