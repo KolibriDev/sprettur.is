@@ -5,6 +5,13 @@ $(function () {
     $nav.affix({ offset: $nav.offset().top });
 
     /*
+     * Smooth scroll
+     */
+    $('.scrollTo').localScroll({
+        duration: 500
+    });
+
+    /*
     * Tabs
     */
 

@@ -21,10 +21,10 @@
 </head>
 <body data-spy="scroll" data-target="nav" data-offset="85">
 
-<header>
+<header id="top">
   <div id="banner">
     <div id="brand">
-      <a href="#top"><span class="logo hide-text">Sprettur</span></a>
+      <span class="logo hide-text">Sprettur</span>
     </div>
     <h1>Við þróum hugbúnað<br>með þér</h1>
     <div id="overlay"></div>
@@ -35,7 +35,7 @@
     <span class="icon-bar"></span>
   </button>
   <nav>
-    <ul class="nav">
+    <ul class="nav scrollTo">
       <li><a href="#hugbunadarthroun">Hugbúnaðarþróun</a></li>
       <li><a href="#verkin">Verkin</a></li>
       <li><a href="#ferlid">Ferlið</a></li>
@@ -522,7 +522,7 @@
       <a href="https://twitter.com/sprettur">Twitter</a><br>
     </div>
 
-    <div class="grid-15 tablet-grid-20 mobile-grid-50">
+    <div class="grid-15 tablet-grid-20 mobile-grid-50 scrollTo">
       <em>Við á vefsíðunni</em><br>
       <a href="#top">Efst upp</a><br>
       <a href="#hugbunadarthroun">Hugbúnaðarþróun</a><br>
@@ -537,6 +537,8 @@
 
 <!-- build:js scripts/main.js -->
 <script src="components/jquery/jquery.js"></script>
+<script src="components/jquery.scrollTo/jquery.scrollTo.js"></script>
+<script src="components/jquery.localScroll/jquery.localScroll.js"></script>
 <script src="components/bootstrap/js/bootstrap-affix.js"></script>
 <script src="components/bootstrap/js/bootstrap-scrollspy.js"></script>
 <script src="components/bootstrap/js/bootstrap-tab.js"></script>

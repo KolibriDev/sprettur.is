@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "jquery": "~1.8.3",
+    "jquery.localScroll": "flesler/jquery.localScroll",
     "html5shiv": "~3.6.2",
     "bootstrap": "~2.3.1",
     "normalize-css": "~2.1.0",
