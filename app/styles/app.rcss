@@ -463,6 +463,9 @@ ul.tabs {
 .client {
   margin-top: 40px;
 }
+@media mobile {
+  .client { padding-bottom: 60px; }
+}
 
 .client p {
   margin-top: 0px;
