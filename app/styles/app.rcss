@@ -709,8 +709,8 @@ footer div {
 
 .process p {
   margin-top: 50px;
-  margin-left: -25px;
-  margin-right: -25px;
+  margin-left: -15px;
+  margin-right: -15px;
 }
 
 .process .item img { width: 121px; }
