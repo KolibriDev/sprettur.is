@@ -392,6 +392,10 @@ p.small {
   width: 887px;
   height: 524px;
 }
+.screenshot img {
+  height: 421px;
+  width: 674px;
+}
 
 ul.tabs {
   padding: 0;
