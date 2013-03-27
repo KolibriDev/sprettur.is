@@ -697,6 +697,18 @@ footer div {
   display: block;
 }
 
+@media mobile {
+  #verkin .tabs a {
+    padding-top: 0;
+  }
+  #verkin .tabs span {
+    background: none;
+    overflow: visible;
+    text-indent: 0;
+    white-space: normal;
+    width: auto;
+  }
+}
 
 /*
  * Process
