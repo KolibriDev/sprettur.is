@@ -187,10 +187,17 @@ footer {
   background-color: var(black);
   color: var(white);
   min-height: 260px;
+  padding-bottom: 60px;
   padding-top: 100px;
   line-height: var(line-height-small);
   font-size: var(font-small);
   font-weight: lighter;
+}
+
+@media mobile {
+  footer {
+    padding: 60px 0;
+  }
 }
 
 footer em {
