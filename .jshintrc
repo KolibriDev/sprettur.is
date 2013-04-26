@@ -8,6 +8,7 @@
     "curly": true,
     "eqeqeq": true,
     "globals": {
+        "$": true,
         "mapbox": true,
         "MM": true
     },
