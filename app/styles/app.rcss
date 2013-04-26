@@ -664,6 +664,7 @@ footer div {
 
 .logo-ja span {
   background-image: url(../images/work/logo_ja.png);
+  background-repeat: no-repeat;
   width: 68px;
   height: 68px;
   display: block;
@@ -676,6 +677,7 @@ footer div {
 
 .logo-sjova span {
   background-image: url(../images/work/logo_sjova.png);
+  background-repeat: no-repeat;
   width: 113px;
   height: 54px;
   display: block;
@@ -688,6 +690,7 @@ footer div {
 
 .logo-eimskip span {
   background-image: url(../images/work/logo_eimskip.png);
+  background-repeat: no-repeat;
   width: 146px;
   height: 35px;
   display: block;
@@ -700,6 +703,7 @@ footer div {
 
 .logo-meniga span {
   background-image: url(../images/work/logo_meniga.png);
+  background-repeat: no-repeat;
   width: 140px;
   height: 41px;
   display: block;
@@ -708,6 +712,7 @@ footer div {
 
 .logo-agile {
   background-image: url(../images/agile_island.png);
+  background-repeat: no-repeat;
   width: 92px;
   height: 67px;
   display: block;
@@ -716,6 +721,7 @@ footer div {
 
 .logo-lean {
   background-image: url(../images/lean_island.png);
+  background-repeat: no-repeat;
   width: 83px;
   height: 72px;
   display: block;
@@ -724,6 +730,7 @@ footer div {
 
 .logo-footer {
   background-image: url(../images/logo_footer.png);
+  background-repeat: no-repeat;
   width: 81px;
   height: 29px;
   display: block;
