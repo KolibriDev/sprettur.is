@@ -345,8 +345,8 @@ p.small {
   min-height: auto;
 }
 
-.box.solid,
-.box.hover:hover {
+.box.solid /*,
+.box.hover:hover*/ {
   background-color: var(gray);
 }
 
