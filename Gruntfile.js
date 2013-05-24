@@ -24,22 +24,14 @@ module.exports = function (grunt) {
     grunt.initConfig({
         yeoman: yeomanConfig,
         watch: {
-            coffee: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-                tasks: ['coffee:dist']
-            },
-            coffeeTest: {
-                files: ['test/spec/{,*/}*.coffee'],
-                tasks: ['coffee:test']
-            },
             rework: {
-                files: ['<%= yeoman.app %>/styles/*.rcss'],
-                tasks: ['rework:dist']
+                files: ['<%= yeoman.app %>/styles/app.css'],
+                tasks: ['rework', 'concat:rework']
             },
             livereload: {
                 files: [
                     '<%= yeoman.app %>/*.html',
-                    '<%= yeoman.app %>/styles/*.css',
+                    '.tmp/styles/{,*/}*.css',
                     '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
                     '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,webp}'
                 ],
@@ -72,15 +64,6 @@ module.exports = function (grunt) {
                         ];
                     }
                 }
-            },
-            dist: {
-                options: {
-                    middleware: function (connect) {
-                        return [
-                            mountFolder(connect, 'dist')
-                        ];
-                    }
-                }
             }
         },
         open: {
@@ -89,7 +72,16 @@ module.exports = function (grunt) {
             }
         },
         clean: {
-            dist: ['.tmp', '<%= yeoman.dist %>/*'],
+            dist: {
+                files: [{
+                    dot: true,
+                    src: [
+                        '.tmp',
+                        '<%= yeoman.dist %>/*',
+                        '!<%= yeoman.dist %>/.git*'
+                    ]
+                }]
+            },
             server: '.tmp'
         },
         jshint: {
@@ -111,56 +103,43 @@ module.exports = function (grunt) {
                 }
             }
         },
-        coffee: {
-            dist: {
-                files: [{
-                    // rather than compiling multiple files here you should
-                    // require them into your main .coffee file
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/scripts',
-                    src: '*.coffee',
-                    dest: '.tmp/scripts',
-                    ext: '.js'
-                }]
-            },
-            test: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/spec',
-                    src: '*.coffee',
-                    dest: 'test/spec'
-                }]
-            }
-        },
         rework: {
-            dist: {
-                files: [{
-                    'app/styles/app.css': '<%= yeoman.app %>/styles/app.rcss'
-                }]
-            },
-
+            '.tmp/styles/normalize.css': '<%= yeoman.app %>/components/normalize-css/normalize.css',
+            '.tmp/styles/unsemantic-grid-responsive-tablet.css': '<%= yeoman.app %>/components/unsemantic/assets/stylesheets/unsemantic-grid-responsive-tablet.css',
+            '.tmp/styles/app.css': '<%= yeoman.app %>/styles/app.css',
+            '.tmp/styles/styles/mapbox.css': '<%= yeoman.app %>/styles/mapbox.css',
             options: {
                 toString: {compress: true},
-
                 use: [
                     ['rework.vars'],
                     ['rework.colors'],
-                    ['rework.at2x'],
+                    ['rework.prefix', 'animation'],
+                    ['rework.prefix', 'animation-delay'],
+                    ['rework.prefix', 'transition'],
                     ['rework.media', {
                         mobile: 'screen and (max-width: 767px)',
                         tablet: 'screen and (min-width: 767px) and (max-width: 1025px)',
                         'at-least-tablet': 'screen and (min-width: 767px)',
                         'at-most-tablet': 'screen and (max-width: 1025px)',
                         desktop: 'screen and (min-width: 1025px)'
-                    }]
-                ]
+                    }],
+                    ['rework.at2x']
+                ],
+                vendors: ['-moz-', '-webkit-', '-o-']
             }
         },
-        // not used since Uglify task does concat,
-        // but still available if needed
-        /*concat: {
-            dist: {}
-        },*/
+        concat: {
+            rework: {
+                files: {
+                    '.tmp/styles/main.css': [
+                        '.tmp/styles/normalize.css',
+                        '.tmp/styles/unsemantic-grid-responsive-tablet.css',
+                        '.tmp/styles/app.css',
+                        '.tmp/styles/mapbox.css'
+                    ]
+                }
+            }
+        },
         useminPrepare: {
             html: '<%= yeoman.app %>/index.html',
             options: {
@@ -187,7 +166,7 @@ module.exports = function (grunt) {
         cssmin: {
             dist: {
                 files: {
-                    '<%= yeoman.dist %>/styles/main.css': '<%= yeoman.dist %>/styles/main.css'
+                    '<%= yeoman.dist %>/styles/main.css': '.tmp/styles/main.css'
                 }
             }
         },
@@ -212,6 +191,17 @@ module.exports = function (grunt) {
                 }]
             }
         },
+        rev: {
+          dist: {
+            files: {
+              src: [
+                '<%= yeoman.dist %>/scripts/{,*/}*.js',
+                '<%= yeoman.dist %>/styles/{,*/}*.css',
+                '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
+              ]
+            }
+          }
+        },
         copy: {
             dist: {
                 files: [{
@@ -221,39 +211,28 @@ module.exports = function (grunt) {
                     dest: '<%= yeoman.dist %>',
                     src: [
                         '*.{ico,txt,png}',
+                        'index.html',
                         '.htaccess'
                     ]
                 }]
-            }
-        },
-        bower: {
-            all: {
-                rjsConfig: '<%= yeoman.app %>/scripts/main.js'
             }
         }
     });
 
     grunt.renameTask('regarde', 'watch');
 
-    grunt.registerTask('server', function (target) {
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
-        }
-
-        grunt.task.run([
-            'clean:server',
-            'coffee:dist',
-            'rework:dist',
-            'livereload-start',
-            'connect:livereload',
-            'open',
-            'watch'
-        ]);
-    });
+    grunt.registerTask('server', [
+        'clean:server',
+        'rework',
+        'concat:rework',
+        'livereload-start',
+        'connect:livereload',
+        'open',
+        'watch'
+    ]);
 
     grunt.registerTask('test', [
         'clean:server',
-        'coffee',
         'rework',
         'connect:test',
         'mocha'
@@ -261,15 +240,16 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'clean:dist',
-        'coffee',
         'rework',
+        'concat',
         'useminPrepare',
         'imagemin',
-        'htmlmin',
-        'concat',
         'cssmin',
-        'uglify',
+        //'htmlmin',
+        'concat',
         'copy',
+        'uglify',
+        //'rev',
         'usemin'
     ]);
 
