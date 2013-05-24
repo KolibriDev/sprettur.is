@@ -34,7 +34,8 @@
 
   var-hr-width: 40px;
 
-  var-profile-height: 600px;
+  var-profile-height: 620px;
+  var-profile-height-tablet: 430px;
 }
 
 body {
@@ -345,8 +346,8 @@ p.small {
   min-height: auto;
 }
 
-.box.solid /*,
-.box.hover:hover*/ {
+.box.solid,
+.box.hover:hover {
   background-color: var(gray);
 }
 
@@ -504,24 +505,30 @@ ul.tabs {
   margin-bottom: 20px;
   min-height: 365px;
 }
+.profile:hover {
+  cursor: pointer;
+}
 
 .profile img {
   display: block;
   width: 100%;
 }
 
-/*
- * http://cssarrowplease.com/
- */
-.box.active {
-  border: 0;
-  color: var(white);
-  position: relative;
+.profile.active {
   background: var(black);
-  padding: 14px;
+  border-color: var(black);
+  color: var(white);
+  display: block;
+  position: relative;
+}
+.profile.active:hover {
+  background: var(black);
+}
+.profile.active a {
+  color: var(white);
 }
 
-.box.active:after {
+.profile.active:after {
   top: 100%;
   border: solid transparent;
   content: " ";
@@ -531,20 +538,12 @@ ul.tabs {
   pointer-events: none;
 }
 
-.box.active:after {
-  border-color: rgba(63, 63, 58, 0);
+.profile.active:after {
+  border-color: rgba(136, 183, 213, 0);
   border-top-color: var(black);
-  border-width: 10px;
+  border-width: 14px;
   left: 50%;
-  margin-left: -10px;
-}
-
-.box.active:hover {
-  background: var(black);
-}
-
-.box.active a {
-  color: var(white);
+  margin-left: -14px;
 }
 
 .expanded {
@@ -552,20 +551,41 @@ ul.tabs {
   margin-bottom: 20px;
 }
 
-.expandedbg {
-  background-color: var(black);
-  background: url(../images/profiles/test.jpg) center center no-repeat;
-  background-size: cover;
-  position: absolute;
+.expanded .img {
+  max-height: var(profile-height);
   left: 0;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
   width: 100%;
-  height: var(profile-height);
+  z-index: 2;
+}
+
+@media tablet {
+  .expanded {
+    height: var(profile-height-tablet);
+  }
+
+  .expanded .img {
+    max-height: var(profile-height-tablet);
+  }
+}
+
+.expanded .img img {
+  margin-top: -70px;
+  max-width: 1680px;
+  width: 100%;
+}
+
+.expanded .description {
+  position: relative;
+  z-index: 3;
 }
 
 .overlay {
   margin: 20px;
   padding: 20px;
-  height: 560px;
+  /*height: 560px;*/
   background-color: rgba(var(black), 0.25);
   color: var(white);
 }
@@ -596,12 +616,9 @@ ul.tabs {
 }
 
 @media tablet {
-  .profile {
-    min-height: 390px;
-  }
-
+  .profile,
   .hire {
-    min-height: 390px;
+    min-height: 375px;
   }
 }
 
