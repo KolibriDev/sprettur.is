@@ -31,4 +31,3 @@ npm-debug.log
 node_modules
 dist
 app/components
-app/styles/app.css
