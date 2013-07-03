@@ -69,9 +69,16 @@ $(function () {
     });
     $(window).trigger('resize');
 
+    var row = function(idx, items, dbg) {
+        var insertPosition = size === TABLET ? 3 : 4;
+        var pos = (Math.floor(idx/insertPosition) + 1) * insertPosition;
+        return Math.min(pos, items + 1);
+    };
+
     $('#starfsfolk').on('expand-profile', '.profile.active', function(e) {
         var $this = $(this);
         var $parent = $this.parent();
+        var $siblingCount = $parent.siblings(':not(#expanded-profile)').length;
         var $prevProfile = $('#expanded-profile');
 
         // disable on mobile
@@ -93,12 +100,11 @@ $(function () {
         var html = $(template(context));
 
         // if we're in full desktop-mode, insert after mod4 element
-        var insertPosition = size === TABLET ? 3 : 4;
-        var pos = (Math.floor($parent.index()/insertPosition) + 1) * insertPosition;
+        var pos = row($parent.index(), $siblingCount, 'pos');
 
         // if we're replacing expanded in same position, replace existing container
         var prevPos = $prevProfile.index();
-        if (pos == prevPos) {
+        if (pos === prevPos) {
             $prevProfile.replaceWith(html);
         } else {
             // otherwise, remove old expanded and add to correct place
