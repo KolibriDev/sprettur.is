@@ -4,7 +4,7 @@
   "dependencies": {},
   "devDependencies": {
     "bower": "~0.8.5",
-    "grunt": "~0.4.0",
+    "grunt": "~0.4.4",
     "grunt-contrib-copy": "~0.4.0",
     "grunt-contrib-concat": "~0.1.2",
     "grunt-contrib-coffee": "~0.4.0",
@@ -24,7 +24,8 @@
     "grunt-open": "~0.2.0",
     "grunt-rev": "~0.1.0",
     "matchdep": "~0.1.1",
-    "rework": "0.14.x"
+    "rework": "0.14.x",
+    "grunt-cli": "~0.1.13"
   },
   "engines": {
     "node": ">=0.8.0"
