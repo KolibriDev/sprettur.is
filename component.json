@@ -9,6 +9,7 @@
     "normalize-css": "~2.1.0",
     "retina.js-js": "alvivi/retinajs",
     "unsemantic": "nathansmith/unsemantic",
-    "handlebars.js": "~1.0.11"
+    "handlebars.js": "~1.0.11",
+    "jquery.scrollTo": "~1.4.11"
   }
 }

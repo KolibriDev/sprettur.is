@@ -122,8 +122,8 @@ module.exports = function (grunt) {
                         'at-least-tablet': 'screen and (min-width: 767px)',
                         'at-most-tablet': 'screen and (max-width: 1025px)',
                         desktop: 'screen and (min-width: 1025px)'
-                    }],
-                    ['rework.at2x']
+                    }]
+                    // ['rework.at2x']
                 ],
                 vendors: ['-moz-', '-webkit-', '-o-']
             }
