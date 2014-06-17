@@ -248,7 +248,6 @@ module.exports = function (grunt) {
         //'htmlmin',
         'concat',
         'copy',
-        'uglify',
         //'rev',
         'usemin'
     ]);
